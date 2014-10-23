@@ -1,0 +1,15 @@
+## Interface: 60000
+## Title: Dark
+## Author: Darkend / DarkStorm / Zenedar / EU
+## Version: 0.0.1
+## Notes: DarkUI Core Libary
+
+initialise.lua
+
+class.lua
+mixin.lua
+
+mixins\events.lua
+mixins\cache.lua
+
+run.lua
