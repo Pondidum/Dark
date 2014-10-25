@@ -9,7 +9,7 @@ local class = {
 
 	end,
 
-	new = function(self)
+	new = function(self, ...)
 
 		local this = setmetatable({}, { __index = self })
 		this:ctor()
@@ -18,7 +18,7 @@ local class = {
 
 	end,
 
-	ctor = function(self)
+	ctor = function(self, ...)
 	end,
 
 	include = function(self, mixin)
