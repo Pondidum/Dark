@@ -10,4 +10,4 @@ local control = ns.class:extend({
 
 })
 
-ns.controls.control = {}
+ns.controls.control = control

@@ -1,6 +1,7 @@
 local addon, ns = ...
 
-local layout = ns.lib.layout
+local layout = ns.layout
+local control = ns.controls.control
 
 local group = control:extend({
 

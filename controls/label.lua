@@ -1,6 +1,7 @@
 local addon, ns = ...
 
-local fonts = ns.lib.media.fonts
+local fonts = ns.media.fonts
+local control = ns.controls.control
 
 local label = control:extend({
 

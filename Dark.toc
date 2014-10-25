@@ -3,6 +3,7 @@
 ## Author: Darkend / DarkStorm / Zenedar / EU
 ## Version: 0.0.1
 ## Notes: DarkUI Core Libary
+## RequiredDeps: Dark.Core
 
 initialise.lua
 
@@ -11,5 +12,11 @@ mixin.lua
 
 mixins\events.lua
 mixins\cache.lua
+
+controls\control.lua
+controls\group.lua
+controls\label.lua
+controls\dropdown.lua
+controls\textbox.lua
 
 run.lua

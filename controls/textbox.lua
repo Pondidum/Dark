@@ -1,6 +1,7 @@
 local addon, ns = ...
 
 local fonts = ns.lib.media.fonts
+local control = ns.controls.control
 
 local textbox = control:extend({
 
