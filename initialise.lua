@@ -3,5 +3,13 @@ local addon, ns = ...
 ns.mixins = {}
 ns.controls = {}
 
-ns.media = Dark.core.media
-ns.layout = Dark.core.layout
+local core = Dark.core
+
+ns.media = {
+	textures = core.textures,
+	colors = core.colors,
+	fonts = core.fonts,
+	sounds = core.sounds,
+}
+
+ns.layout = core.layout
