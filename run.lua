@@ -9,4 +9,4 @@ local dark = {
 	controls = ns.controls
 }
 
-Dark = dark
+Darker = dark
