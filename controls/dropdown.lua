@@ -9,6 +9,10 @@ local textbox = control:extend({
 
 		self.frame = CreateFrame("frame", options.name, options.parent, "UIDropDownMenuTemplate")
 
+		if options.items then
+			self:addItems(options.items)
+		end
+
 	end,
 
 	addItems = function(self, items)
