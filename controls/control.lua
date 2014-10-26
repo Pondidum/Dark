@@ -4,20 +4,38 @@ local control = ns.class:extend({
 
 	ctor = function(self, options)
 
-		self.frame = CreateFrame("Frame", options.name, options.parent)
+		options = options or {}
 
+		self:create(options)
+		self:applyOptions(options)
 	end,
 
-	setStandardOptions = function(self, options)
+	create = function(self, options)
+		self.frame = CreateFrame("Frame", options.name, options.parent)
+	end,
 
-		if options.size then
-			self:setSize(unpack(options.size))
+	applyOptions = function(self, options)
+
+		if not options then
+			return
+		end
+
+		for key, value in pairs(options) do
+			local method = self[key]
+
+			if method then
+				method(self, value)
+			end
 		end
 
 	end,
 
-	setSize = function(self, width, height)
-		self.frame:SetSize(width, height)
+	size = function(self, config)
+		self.frame:SetSize(unpack(config))
+	end,
+
+	point = function(self, config)
+		self.frame:SetPoint(unpack(config))
 	end,
 })
 

@@ -5,7 +5,7 @@ local control = ns.controls.control
 
 local label = control:extend({
 
-	ctor = function(self, text, options)
+	create = function(self, options)
 
 		self.frame = CreateFrame("Frame", options.name, options.parent)
 		self.label = self.frame:CreateFontString()
@@ -13,12 +13,9 @@ local label = control:extend({
 		self.label:SetAllPoints(self.frame)
 		self.label:SetFont(fonts.normal, 12)
 
-		self:setText(text)
-		self:setStandardOptions(options)
-
 	end,
 
-	setText = function(self, value)
+	text = function(self, value)
 		self.label:SetText(value)
 	end,
 

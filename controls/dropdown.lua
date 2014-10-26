@@ -5,17 +5,13 @@ local control = ns.controls.control
 
 local textbox = control:extend({
 
-	ctor = function(self, options)
+	create = function(self, options)
 
 		self.frame = CreateFrame("frame", options.name, options.parent, "UIDropDownMenuTemplate")
 
-		if options.items then
-			self:addItems(options.items)
-		end
-
 	end,
 
-	addItems = function(self, items)
+	items = function(self, items)
 
 		UIDropDownMenu_Initialize(self, function(menu, level)
 

@@ -5,10 +5,17 @@ local control = ns.controls.control
 
 local group = control:extend({
 
-	ctor = function(self, options)
-		self._base:ctor(options)
+	create = function(self, options)
 
+		self.base:create(options)
 		layout.init(self.frame, options)
+
+	end,
+
+	children = function(self, childrenTable)
+		for i, control in ipairs(childrenTable) do
+			self:add(control)
+		end
 	end,
 
 	add = function(self, control)
