@@ -12,7 +12,7 @@ local class = {
 	new = function(self, ...)
 
 		local this = setmetatable({}, { __index = self })
-		this:ctor()
+		this:ctor(...)
 
 		return this
 
