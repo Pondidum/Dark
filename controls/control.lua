@@ -2,6 +2,8 @@ local addon, ns = ...
 
 local control = ns.class:extend({
 
+	style = ns.style,
+
 	ctor = function(self, options)
 
 		options = options or {}
