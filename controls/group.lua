@@ -19,7 +19,12 @@ local group = control:extend({
 	end,
 
 	add = function(self, control)
-		self.frame.add(control.frame)
+
+		local child = control.frame
+
+		child:SetParent(self.frame)
+		self.frame.add(child)
+
 	end,
 })
 
