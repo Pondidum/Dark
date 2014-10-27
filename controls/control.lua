@@ -13,7 +13,7 @@ local control = ns.class:extend({
 	end,
 
 	create = function(self, options)
-		self.frame = CreateFrame("Frame", options.name, options.parent)
+		self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
 	end,
 
 	applyOptions = function(self, options)
