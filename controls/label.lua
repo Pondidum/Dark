@@ -13,8 +13,7 @@ local label = control:extend({
 		self.label:SetAllPoints(self.frame)
 		self.label:SetFont(fonts.normal, 12)
 
-		self.style.applyBackgroundTo(self.frame)
-		self.style.addShadow(self.frame)
+		self.style:frame(self.frame)
 
 	end,
 

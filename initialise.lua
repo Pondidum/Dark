@@ -13,4 +13,3 @@ ns.media = {
 }
 
 ns.layout = core.layout
-ns.style = core.style
