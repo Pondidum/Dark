@@ -3,7 +3,7 @@ local addon, ns = ...
 local fonts = ns.media.fonts
 local control = ns.controls.control
 
-local textbox = control:extend({
+local dropdown = control:extend({
 
 	create = function(self, options)
 
@@ -13,7 +13,7 @@ local textbox = control:extend({
 
 	items = function(self, items)
 
-		UIDropDownMenu_Initialize(self, function(menu, level)
+		UIDropDownMenu_Initialize(self.frame, function(menu, level)
 
 			for key, text in pairs(items) do
 
@@ -22,7 +22,7 @@ local textbox = control:extend({
 				info.value = key
 
 				info.func = function(item)
-					UIDropDownMenu_SetSelectedValue(self, item.value)
+					UIDropDownMenu_SetSelectedValue(self.frame, item.value)
 				end
 
 				UIDropDownMenu_AddButton(info, level)
@@ -31,10 +31,10 @@ local textbox = control:extend({
 
 		end)
 
-		UIDropDownMenu_JustifyText(self, "LEFT")
+		UIDropDownMenu_JustifyText(self.frame, "LEFT")
 
 	end,
 
 })
 
-ns.controls.textbox = textbox
+ns.controls.dropdown = dropdown
