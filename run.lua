@@ -6,7 +6,8 @@ local dark = {
 	class = ns.class,
 	mixin = ns.mixin,
 	events = ns.mixins.events,
-	controls = ns.controls
+	controls = ns.controls,
+	style = ns.style
 }
 
 Darker = dark
