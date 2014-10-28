@@ -10,6 +10,8 @@ initialise.lua
 class.lua
 mixin.lua
 
+style.lua
+
 mixins\events.lua
 mixins\cache.lua
 
