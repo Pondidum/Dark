@@ -39,7 +39,18 @@ local style = {
 
 	frame = function(self, target)
 
-		target:SetBackdrop( {
+		if target.bg then return end
+
+		local bg = CreateFrame("Frame", nil, target)
+
+		bg:SetFrameLevel(1)
+		bg:SetFrameStrata(bg:GetFrameStrata())
+		bg:SetPoint("TOPLEFT", -BORDER_OFFSET, BORDER_OFFSET)
+		bg:SetPoint("BOTTOMLEFT", -BORDER_OFFSET, -BORDER_OFFSET)
+		bg:SetPoint("TOPRIGHT", BORDER_OFFSET, BORDER_OFFSET)
+		bg:SetPoint("BOTTOMRIGHT", BORDER_OFFSET, -BORDER_OFFSET)
+
+		bg:SetBackdrop( {
 			bgFile = textures.normal,
 			tile = true,
 			edgeFile = textures.shadow,
@@ -52,9 +63,10 @@ local style = {
 			},
 		})
 
-		target:SetBackdropColor(unpack(colors.background))
-		target:SetBackdropBorderColor(unpack(colors.shadow))
+		bg:SetBackdropColor(unpack(colors.background))
+		bg:SetBackdropBorderColor(unpack(colors.shadow))
 
+		target.bg = bg
 	end,
 
 }
