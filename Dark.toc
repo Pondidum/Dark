@@ -20,5 +20,6 @@ controls\group.lua
 controls\label.lua
 controls\dropdown.lua
 controls\textbox.lua
+controls\button.lua
 
 run.lua
