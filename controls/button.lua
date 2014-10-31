@@ -6,8 +6,8 @@ local button = control:extend({
 
 	create = function(self, options)
 
-		local button = CreateFrame("Button", options.name, options.parent, "ActionButtonTemplate")
-		self.frame = button
+		self.frame = CreateFrame("Button", options.name, options.parent, "ActionButtonTemplate")
+		self.style:actionButton(self.frame)
 
 	end,
 
