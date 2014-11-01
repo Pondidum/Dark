@@ -43,8 +43,9 @@ local style = {
 
 		local bg = CreateFrame("Frame", nil, target)
 
-		bg:SetFrameLevel(1)
-		bg:SetFrameStrata(bg:GetFrameStrata())
+		bg:SetFrameLevel(0)
+		bg:SetFrameStrata(target:GetFrameStrata())
+
 		bg:SetPoint("TOPLEFT", -BORDER_OFFSET, BORDER_OFFSET)
 		bg:SetPoint("BOTTOMLEFT", -BORDER_OFFSET, -BORDER_OFFSET)
 		bg:SetPoint("TOPRIGHT", BORDER_OFFSET, BORDER_OFFSET)
