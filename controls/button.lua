@@ -1,13 +1,21 @@
 local addon, ns = ...
 
 local control = ns.controls.control
+local fonts = ns.media.fonts
 
 local button = control:extend({
 
 	create = function(self, options)
 
-		self.frame = CreateFrame("Button", options.name, options.parent, "ActionButtonTemplate")
-		self.style:actionButton(self.frame)
+		local button = CreateFrame("Button", options.name, options.parent, "ActionButtonTemplate")
+		self.style:actionButton(button)
+
+		button.text = button:CreateFontString()
+		button.text:SetFont(fonts.normal, 12)
+		button.text:SetAllPoints(button)
+		button.text:SetJustifyH("CENTER")
+
+		self.frame = button
 
 	end,
 
