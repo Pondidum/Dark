@@ -11,9 +11,9 @@ local button = control:extend({
 
 	end,
 
-	text = function(self, value)
-		self.frame:SetText(value)
-	end,
+	icon = function(self, value)
+		self.frame.icon:SetTexture(value)
+	end
 })
 
 ns.controls.button = button
