@@ -98,6 +98,16 @@ local style = {
 
 	end,
 
+	textbox = function(self, target)
+
+		self:frame(target)
+
+		target.Left:Hide()
+		target.Right:Hide()
+		target.Middle:Hide()
+
+	end,
+
 }
 
 ns.style = style

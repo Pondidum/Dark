@@ -11,6 +11,7 @@ local textbox = control:extend({
 		edit:SetAutoFocus(false)
 		edit:SetFont(fonts.normal, 12)
 
+		self.style:textbox(edit)
 		self.frame = edit
 
 	end,
