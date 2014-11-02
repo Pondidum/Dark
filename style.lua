@@ -70,31 +70,38 @@ local style = {
 		target.bg = bg
 	end,
 
-	actionButton = function(self, target)
+	button = function(self, target)
 
-		local flash = target.Flash
-		local border = target.Border
-		local normalTexture = target.NormalTexture
-		local icon = target.icon
+		self:frame(target)
 
-		target:SetNormalTexture("")
-		target:GetPushedTexture():SetTexture(0.9,0.8,0.1,0.3)
-		target:GetHighlightTexture():SetTexture(1,1,1,0.3)
-
+		local normalTexture = target:GetNormalTexture()
 		normalTexture:ClearAllPoints()
 		normalTexture:SetPoint("TOPLEFT")
 		normalTexture:SetPoint("BOTTOMRIGHT")
+		normalTexture:SetTexture(nil)
 
+		local pushed = target:GetPushedTexture()
+		pushed:SetTexture(0.9,0.8,0.1,0.3)
+
+		local highlight = target:GetHighlightTexture()
+		highlight:SetTexture(1,1,1,0.3)
+
+	end,
+
+	actionButton = function(self, target)
+
+		self:button(target)
+
+		local icon = target.icon
 		icon:SetTexCoord(.08, .92, .08, .92)
 		icon:SetPoint("TOPLEFT", target, 0, 0)
 		icon:SetPoint("BOTTOMRIGHT", target, 0, 0)
 
+		local flash = target.Flash
 		flash:SetTexture("")
 
+		local border = target.Border
 		border:Hide()
-		border.Show = function() end
-
-		self:frame(target)
 
 	end,
 
