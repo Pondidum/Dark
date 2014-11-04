@@ -39,6 +39,17 @@ local eventMixer = ns.mixin:extend({
 		return sharedStore[name] and sharedStore[name][self]
 
 	end,
+
+	postMix = function(self, target)
+
+		if target.events and type(target.events) == "table" then
+			for i, event in ipairs(target.events) do
+				target:register(event)
+			end
+		end
+
+	end,
+
 })
 
 ns.mixins.events = eventMixer
