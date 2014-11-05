@@ -41,7 +41,6 @@ local eventMixer = ns.mixin:extend({
 	end,
 
 	postMix = function(self, target)
-
 		if target.events and type(target.events) == "table" then
 			for i, event in ipairs(target.events) do
 				target:register(event)
@@ -50,6 +49,25 @@ local eventMixer = ns.mixin:extend({
 
 	end,
 
+	new = function(self, eventSet)
+
+		local instance = {
+
+			events = {},
+
+			ctor = function(this)
+				this:include(ns.mixins.events)
+			end,
+		}
+
+		for eventName, handler in pairs(eventSet) do
+			table.insert(instance.events, eventName)
+			instance[eventName] = handler
+		end
+
+		return ns.class:extend(instance):new()
+
+	end,
 })
 
 ns.mixins.events = eventMixer
