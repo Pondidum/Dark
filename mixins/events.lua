@@ -3,7 +3,7 @@ local addon, ns = ...
 local sharedStore = {}
 local sharedFrame = CreateFrame("Frame")
 
-sharedFrame:SetScript("OnEvent", function(frame, ...)
+sharedFrame:SetScript("OnEvent", function(frame, name, ...)
 
 	local targets = sharedStore[name] or {}
 
@@ -23,7 +23,7 @@ local eventMixer = ns.mixin:extend({
 		sharedStore[name] = sharedStore[name] or {}
 		sharedStore[name][self] = true
 
-		frame:RegisterEvent(name)
+		sharedFrame:RegisterEvent(name)
 	end,
 
 	unregister = function(self, name)
