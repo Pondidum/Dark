@@ -23,6 +23,10 @@ local label = control:extend({
 		self.label:SetText(value)
 	end,
 
+	align = function(self, value)
+		self.label:SetJustifyH(value)
+	end,
+
 })
 
 ns.controls.label = label
