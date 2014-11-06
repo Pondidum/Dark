@@ -5,6 +5,8 @@ local control = ns.controls.control
 
 local label = control:extend({
 
+	defaultWidth = 50,
+
 	create = function(self, options)
 
 		self.frame = CreateFrame("Frame", options.name, options.parent)
