@@ -39,6 +39,11 @@ local control = ns.class:extend({
 	point = function(self, config)
 		self.frame:SetPoint(unpack(config))
 	end,
+
+	parent = function(self, value)
+		self.frame:SetParent(value)
+	end,
+
 })
 
 ns.controls.control = control
