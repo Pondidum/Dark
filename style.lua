@@ -101,6 +101,7 @@ local style = {
 		flash:SetTexture("")
 
 		local border = target.Border
+		border:SetTexture(nil)
 		border:Hide()
 
 	end,
