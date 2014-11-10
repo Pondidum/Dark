@@ -7,7 +7,7 @@ local group = control:extend({
 
 	create = function(self, options)
 
-		self.base:create(options)
+		self.base.create(self, options)
 		layout.init(self.frame, options)
 
 	end,
