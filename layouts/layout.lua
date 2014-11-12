@@ -27,7 +27,7 @@ local layout = {
 	clear = function(self)
 		table.wipe(self.children)
 		self:performLayout()
-	endm
+	end,
 
 	performLayout = function(self)
 
