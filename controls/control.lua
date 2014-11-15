@@ -18,7 +18,7 @@ local control = ns.class:extend({
 	end,
 
 	create = function(self, options)
-		self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
+		--self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
 	end,
 
 	applyDefaults = function(self)

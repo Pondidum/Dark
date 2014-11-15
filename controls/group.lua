@@ -7,7 +7,7 @@ local group = control:extend({
 
 	create = function(self, options)
 
-		self.base.create(self, options)
+		self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
 		layout.init(self.frame, options)
 
 	end,
