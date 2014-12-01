@@ -9,7 +9,7 @@ local label = control:extend({
 
 	create = function(self, options)
 
-		self.frame = CreateFrame("Frame", options.name, options.parent)
+		self:base():create(options)
 		self.label = self.frame:CreateFontString()
 
 		self.label:SetAllPoints(self.frame)

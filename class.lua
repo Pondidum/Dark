@@ -4,7 +4,20 @@ local class = {
 
 	extend = function(self, this)
 
-		this.base = self
+		--i could put this method on class itself,
+		--but then i couldnt completely close over the self/base var
+
+		this.base = function(child)
+
+			local index = function(_, methodName)
+				return function(_, ...)
+					self[methodName](child, ...)
+				end
+			end
+
+			return setmetatable({}, { __index = index })
+		end
+
 		return setmetatable(this, { __index = self })
 
 	end,
