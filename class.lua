@@ -9,13 +9,15 @@ local class = {
 
 		this.base = function(child)
 
-			local index = function(_, methodName)
-				return function(_, ...)
-					self[methodName](child, ...)
+			local parent = {
+				__index = function(_, methodName)
+					return function(_, ...)
+						self[methodName](child, ...)
+					end
 				end
-			end
+			}
 
-			return setmetatable({}, { __index = index })
+			return setmetatable({}, parent)
 		end
 
 		return setmetatable(this, { __index = self })
