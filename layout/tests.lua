@@ -1,3 +1,20 @@
+require("framemodel")
+
+local horizontal = loadfile("horizontal.lua")
+local vertical = loadfile("vertical.lua")
+
+local engine = {}
+local ns = {
+	layoutEngine = {
+		addStrategy = function(self, name, strat)
+			engine[name] = strat
+		end,
+	}
+}
+
+horizontal(nil, ns)
+vertical(nil, ns)
+
 local tests = {
 
 	autosize_two_frames_no_wrap = function(engine)
@@ -58,21 +75,17 @@ local tests = {
 	end,
 }
 
-RunTests = function(engine)
+for name, test in pairs(tests) do
 
-	for name, test in pairs(tests) do
+	local status, message = pcall(function() test(engine) end)
 
-		local status, message = pcall(function() test(engine) end)
-
-		if status then
-			status = "passed"
-		else
-			status = message
-		end
-
-		print(string.format("Test %s: %s", name:gsub("_", " "), status))
-
+	if status then
+		status = "passed"
+	else
+		status = message
 	end
+
+	print(string.format("Test %s: %s", name:gsub("_", " "), status))
 
 end
 

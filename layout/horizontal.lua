@@ -1,9 +1,4 @@
-if require then
-	require("framemodel")
-	require("horizontaltests")
-else
-	local addon, ns = ...
-end
+local addon, ns = ...
 
 local horizontal = function(settings, container, children)
 
@@ -52,9 +47,4 @@ local horizontal = function(settings, container, children)
 
 end
 
-if RunTests then
-	RunTests({ horizontal = horizontal })
-else
-	ns.layoutEngine:addStrategy("horizontal", horizontal)
-end
-
+ns.layoutEngine:addStrategy("horizontal", horizontal)
