@@ -17,7 +17,7 @@ vertical(nil, ns)
 
 local tests = {
 
-	autosize_two_frames_no_wrap = function(engine)
+	horizontal_autosize_two_frames_no_wrap = function(engine)
 
 		local settings = {
 			origin = "TOPLEFT",
@@ -36,7 +36,7 @@ local tests = {
 
 	end,
 
-	autosize_two_frames_wrap = function(engine)
+	horizontal_autosize_two_frames_wrap = function(engine)
 
 		local settings = {
 			origin = "TOPLEFT",
@@ -55,7 +55,7 @@ local tests = {
 
 	end,
 
-	auto_size_three_frames_wrap = function(engine)
+	horizontal_auto_size_three_frames_wrap = function(engine)
 
 		local settings = {
 			origin = "TOPLEFT",
@@ -71,6 +71,64 @@ local tests = {
 
 		assert(container.width == 55)
 		assert(container.height == 25)
+
+	end,
+
+
+	vertical_autosize_two_frames_no_wrap = function(engine)
+
+		local settings = {
+			origin = "TOPLEFT",
+			wrap = false,
+			itemSpacing = 5,
+			autosize = "both",
+		}
+
+		local container = Frame:new(500, 500)
+		local frames = { Frame:new(10, 10), Frame:new(10, 10)}
+
+		engine.vertical(settings, container, frames)
+
+		assert(container.width == 10)
+		assert(container.height == 25)
+
+	end,
+
+	vertical_autosize_two_frames_wrap = function(engine)
+
+		local settings = {
+			origin = "TOPLEFT",
+			wrap = true,
+			itemSpacing = 5,
+			autosize = "both",
+		}
+
+		local container = Frame:new(500, 15)
+		local frames = { Frame:new(10, 10), Frame:new(10, 10)}
+
+		engine.vertical(settings, container, frames)
+
+		assert(container.width == 25)
+		assert(container.height == 10)
+
+	end,
+
+	vertical_auto_size_three_frames_wrap = function(engine)
+
+		local settings = {
+			origin = "TOPLEFT",
+			wrap = true,
+			itemSpacing = 5,
+			autosize = "both",
+		}
+
+		local container = Frame:new(500, 30)
+		local frames = { Frame:new(10, 10), Frame:new(10, 10), Frame:new(10, 55)}
+
+		engine.vertical(settings, container, frames)
+
+		assert(container.width == 25)
+		assert(container.height == 55)
 
 	end,
 }
