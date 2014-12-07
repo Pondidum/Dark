@@ -10,6 +10,15 @@ local engine = ns.class:extend({
 		self.options = options
 		self.children = {}
 
+		local stratType = options.type:lower()
+		local strat = strategies[stratType]
+
+		if not strat then
+			error(string.format("No layout stragey called %s could be found", stratType))
+		end
+
+		self.strategy = strat
+
 	end,
 
 	addStrategy = function(self, name, strat)
@@ -40,16 +49,7 @@ local engine = ns.class:extend({
 	end,
 
 	layout = function(self)
-
-		local stratType = self.options.type:lower()
-		local strat = strategies[stratType]
-
-		if not strat then
-			error(string.format("No layout stragey called %s could be found", stratType))
-		end
-
-		strat(self.options, self.container, self.children)
-
+		self.strategy(self.options, self.container, self.children)
 	end,
 
 	debug = function(self)
