@@ -64,7 +64,7 @@ local tests = {
 		assert(first.yoffset == 0, first.yoffset)
 
 		assert(second.xoffset == 0, second.xoffset)
-		assert(second.yoffset == 15, second.yoffset)
+		assert(second.yoffset == -15, second.yoffset)
 	end,
 
 	horizontal_auto_size_three_frames_wrap = function(engine)
@@ -93,7 +93,7 @@ local tests = {
 		assert(second.yoffset == 0, second.yoffset)
 
 		assert(third.xoffset == 0, third.xoffset)
-		assert(third.yoffset == 15, third.yoffset)
+		assert(third.yoffset == -15, third.yoffset)
 
 	end,
 
