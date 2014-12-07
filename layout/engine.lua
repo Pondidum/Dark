@@ -51,6 +51,13 @@ local engine = ns.class:extend({
 
 	end,
 
+	debug = function(self)
+		print("Available strategies:")
+
+		for name, strat in pairs(strategies) do
+			print("", name)
+		end
+	end,
 })
 
 ns.layoutEngine = engine
