@@ -7,7 +7,8 @@ local dark = {
 	mixin = ns.mixin,
 	events = ns.mixins.events,
 	controls = ns.controls,
-	style = ns.style
+	style = ns.style,
+	layoutEngine = ns.layoutEngine,
 }
 
 Darker = dark
