@@ -18,7 +18,6 @@ local engine = ns.class:extend({
 
 	addChild = function(self, child)
 		table.insert(self.children, child)
-		self:performLayout()
 	end,
 
 	clearChildren = function(self, child)
@@ -47,7 +46,8 @@ local engine = ns.class:extend({
 		if not strat then
 			error(string.format("No layout stragey called %s could be found", options.type))
 		end
-			strat(self.options, self.container, self.children)
+
+		strat(self.options, self.container, self.children)
 
 	end,
 
