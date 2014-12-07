@@ -116,10 +116,10 @@ local tests = {
 		assert(container.height == 25, container.height)
 
 		assert(first.xoffset == 0, first.xoffset)
-		assert(first.xoffset == 0, first.xoffset)
+		assert(first.yoffset == 0, first.yoffset)
 
 		assert(second.xoffset == 0, second.xoffset)
-		assert(second.xoffset == 15, second.xoffset)
+		assert(second.yoffset == -15, second.yoffset)
 
 	end,
 
@@ -142,10 +142,10 @@ local tests = {
 		assert(container.height == 10, container.height)
 
 		assert(first.xoffset == 0, first.xoffset)
-		assert(first.xoffset == 0, first.xoffset)
+		assert(first.yoffset == 0, first.yoffset)
 
-		assert(second.xoffset == 0, second.xoffset)
 		assert(second.xoffset == 15, second.xoffset)
+		assert(second.yoffset == 0, second.yoffset)
 
 	end,
 
@@ -169,13 +169,13 @@ local tests = {
 		assert(container.height == 55)
 
 		assert(first.xoffset == 0, first.xoffset)
-		assert(first.xoffset == 0, first.xoffset)
+		assert(first.yoffset == 0, first.yoffset)
 
 		assert(second.xoffset == 0, second.xoffset)
-		assert(second.xoffset == 15, second.xoffset)
+		assert(second.yoffset == -15, second.yoffset)
 
-		assert(third.xoffset == 0, third.xoffset)
 		assert(third.xoffset == 15, third.xoffset)
+		assert(third.yoffset == 0, third.yoffset)
 
 	end,
 }
