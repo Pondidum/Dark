@@ -42,10 +42,10 @@ local engine = ns.class:extend({
 
 	layout = function(self)
 
-		local strat = strategies[options.name]
+		local strat = strategies[self.options.type]
 
 		if not strat then
-			error(string.format("No layout stragey called %s could be found", options.name))
+			error(string.format("No layout stragey called %s could be found", options.type))
 		end
 			strat(self.options, self.container, self.children)
 
