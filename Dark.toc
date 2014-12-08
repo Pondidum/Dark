@@ -25,5 +25,6 @@ controls\label.lua
 controls\dropdown.lua
 controls\textbox.lua
 controls\button.lua
+controls\dsl.lua
 
 run.lua
