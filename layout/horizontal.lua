@@ -23,6 +23,7 @@ local horizontal = function(settings, container, children)
 			rowHeight = 0
 		end
 
+		child:ClearAllPoints()
 		child:SetPoint(settings.origin, container, settings.origin, x * direction, -y)
 
 		x = x + child:GetWidth() + settings.itemSpacing

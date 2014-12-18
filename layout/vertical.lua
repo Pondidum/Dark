@@ -23,6 +23,7 @@ local vertical = function(settings, container, children)
 			colWidth = 0
 		end
 
+		child:ClearAllPoints()
 		child:SetPoint(settings.origin, container, settings.origin, x, y * direction)
 
 		y = y + child:GetHeight() + settings.itemSpacing
