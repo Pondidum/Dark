@@ -1,5 +1,6 @@
+local addon, ns = ...
 
-local horizontal = {
+local horizontalActions = {
 
 	getDirection = function(settings)
 
@@ -56,7 +57,7 @@ local horizontal = {
 	end,
 }
 
-local vertical = {
+local verticalActions = {
 
 	getDirection = function(settings)
 
@@ -146,5 +147,16 @@ local engine = function(settings, actions, container, children)
 		container:SetHeight(actions.getContainerHeight(settings, currentExpand, y))
 	end
 
-
 end
+
+local horizontal = function(settings, container, children)
+	engine(settings, horizontalActions, container, children)
+end
+
+local vertical = function(settings, container, children)
+	engine(settings, verticalActions, container, children)
+end
+
+ns.layoutEngine:addStrategy("horizontal", horizontal)
+ns.layoutEngine:addStrategy("vertical", vertical)
+
