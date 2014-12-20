@@ -84,7 +84,7 @@ local verticalActions = {
 	end,
 
 	getY = function(y, direction)
-		return y * direction
+		return -y * direction
 	end,
 
 	getXnext = function(settings, x, child)
