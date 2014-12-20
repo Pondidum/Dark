@@ -16,8 +16,7 @@ mixins\events.lua
 mixins\cache.lua
 
 layout\engine.lua
-layout\horizontal.lua
-layout\vertical.lua
+layout\common.lua
 
 controls\control.lua
 controls\group.lua
