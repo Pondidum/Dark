@@ -1,6 +1,6 @@
 
 local horizontal = {
-	
+
 	getDirection = function(settings)
 
 		if settings.origin:find("RIGHT") then
@@ -67,7 +67,7 @@ local vertical = {
 	end,
 
 	shouldWrap = function(settings, container, child, x, y)
-		y + child:GetHeight() > container:GetHeight()
+		return y + child:GetHeight() > container:GetHeight()
 	end,
 
 	getXreset = function(settings, x, currentExpand)
