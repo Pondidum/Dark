@@ -62,9 +62,9 @@ local verticalActions = {
 	getDirection = function(settings)
 
 		if settings.origin:find("TOP") then
-			direction = -1
+			direction = 1
 		end
-		return 1
+		return -1
 	end,
 
 	shouldWrap = function(settings, container, child, x, y)
@@ -84,7 +84,7 @@ local verticalActions = {
 	end,
 
 	getY = function(y, direction)
-		return -y * direction
+		return y * direction
 	end,
 
 	getXnext = function(settings, x, child)
