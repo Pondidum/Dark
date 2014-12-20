@@ -116,7 +116,7 @@ local verticalActions = {
 
 local engine = function(settings, actions, container, children)
 
-	local direction = actions.getDirection()
+	local direction = actions.getDirection(settings)
 
 	local x, y = 0, 0
 	local currentExpand = 0
