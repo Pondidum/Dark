@@ -7,17 +7,17 @@ local control = ns.class:extend({
 	defaultWidth = 75,
 	defaultHeight = 18,
 
-	ctor = function(self, options)
+	ctor = function(self, parent, options)
 
 		options = options or {}
 
-		self:create(options)
+		self:create(parent, options)
 		self:applyDefaults()
 		self:applyOptions(options)
 
 	end,
 
-	create = function(self, options)
+	create = function(self, parent, options)
 		--self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
 	end,
 
@@ -52,6 +52,12 @@ local control = ns.class:extend({
 
 	height = function(self, value)
 		self.frame:SetHeight(value)
+	end,
+
+	points = function(self, config)
+		for i, point in ipairs(config) do
+			self:point(point)
+		end
 	end,
 
 	point = function(self, config)

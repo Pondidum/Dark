@@ -5,9 +5,9 @@ local control = ns.controls.control
 
 local group = control:extend({
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		self.frame = CreateFrame("Frame", options.name, options.parent)
+		self.frame = CreateFrame("Frame", options.name, parent)
 		self.engine = ns.layoutEngine:new(self.frame, options)
 
 	end,
@@ -24,6 +24,7 @@ local group = control:extend({
 
 		child:SetParent(self.frame)
 		self.engine:addChild(child)
+		self.engine:performLayout()
 
 	end,
 })

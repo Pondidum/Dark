@@ -5,9 +5,9 @@ local control = ns.controls.control
 
 local dropdown = control:extend({
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		self.frame = CreateFrame("frame", options.name, options.parent, "UIDropDownMenuTemplate")
+		self.frame = CreateFrame("frame", options.name, parent, "UIDropDownMenuTemplate")
 
 		self.style:button(_G[options.name .. "Button"])
 	end,

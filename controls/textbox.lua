@@ -5,9 +5,9 @@ local control = ns.controls.control
 
 local textbox = control:extend({
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		local edit = CreateFrame("editbox", options.name, options.parent, "InputBoxTemplate")
+		local edit = CreateFrame("editbox", options.name, parent, "InputBoxTemplate")
 		edit:SetAutoFocus(false)
 		edit:SetFont(fonts.normal, 12)
 

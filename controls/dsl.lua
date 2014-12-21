@@ -15,9 +15,13 @@ local controlDsl = {
 				error(string.format("Cannot find a control type called '%s'.", controlType))
 			end
 
-			config.parent = config.parent or parent
+			local p = config.parent or parent
 
-			local instance = controlClass:new(config)
+			if p.frame then
+				p = p.frame
+			end
+
+			local instance = controlClass:new(p, config)
 
 			if config.controls then
 				self:process(instance, config.controls)

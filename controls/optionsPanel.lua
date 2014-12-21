@@ -4,9 +4,9 @@ local group = ns.controls.group
 
 local optionsPanel = group:extend({
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
+		self.frame = CreateFrame("Frame", options.name, parent)
 		self.frame.name = options.name
 
 		InterfaceOptions_AddCategory(self.frame)

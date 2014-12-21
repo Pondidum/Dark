@@ -5,9 +5,9 @@ local fonts = ns.media.fonts
 
 local button = control:extend({
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		local button = CreateFrame("Button", options.name, options.parent, "ActionButtonTemplate")
+		local button = CreateFrame("Button", options.name, parent, "ActionButtonTemplate")
 		self.style:actionButton(button)
 
 		button.text = button:CreateFontString()

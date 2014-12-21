@@ -7,9 +7,9 @@ local label = control:extend({
 
 	defaultWidth = 50,
 
-	create = function(self, options)
+	create = function(self, parent, options)
 
-		self.frame = CreateFrame("Frame", options.name, options.parent)
+		self.frame = CreateFrame("Frame", options.name, parent)
 		self.label = self.frame:CreateFontString()
 
 		self.label:SetAllPoints(self.frame)
