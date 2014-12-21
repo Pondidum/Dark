@@ -7,8 +7,8 @@ local group = control:extend({
 
 	create = function(self, options)
 
-		self:base():create(options)
-		layout.init(self.frame, options)
+		self.frame = CreateFrame("Frame", options.name, options.parent)
+		self.engine = ns.layoutEngine:new(self.frame, options)
 
 	end,
 
@@ -23,7 +23,7 @@ local group = control:extend({
 		local child = control.frame
 
 		child:SetParent(self.frame)
-		self.frame.add(child)
+		self.engine:addChild(child)
 
 	end,
 })
