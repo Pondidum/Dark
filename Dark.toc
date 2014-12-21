@@ -15,6 +15,7 @@ style.lua
 mixins\events.lua
 mixins\cache.lua
 mixins\configReader.lua
+mixins\configWriter.lua
 
 layout\engine.lua
 layout\common.lua
