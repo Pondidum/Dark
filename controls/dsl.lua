@@ -8,19 +8,19 @@ local controlDsl = {
 
 		for i, config in ipairs(input) do
 
-			local controlType = input.type:lower()
+			local controlType = config.type:lower()
 			local controlClass = controls[controlType]
 
 			if not controlClass then
 				error(string.format("Cannot find a control type called '%s'.", controlType))
 			end
 
-			input.parent = input.parent or parent
+			config.parent = config.parent or parent
 
-			local instance = controlClass:new(input)
+			local instance = controlClass:new(config)
 
-			if input.controls then
-				self:process(instance, input.controls)
+			if config.controls then
+				self:process(instance, config.controls)
 			end
 
 		end
