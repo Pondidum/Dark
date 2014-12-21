@@ -10,6 +10,8 @@ local dark = {
 	controls = ns.controls,
 	style = ns.style,
 	layoutEngine = ns.layoutEngine,
+
+	spellData = ns.spellData:new()
 }
 
 Darker = dark

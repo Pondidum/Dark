@@ -6,6 +6,7 @@
 ## RequiredDeps: Dark.Core
 
 initialise.lua
+config.lua
 
 class.lua
 mixin.lua
@@ -27,5 +28,7 @@ controls\dropdown.lua
 controls\textbox.lua
 controls\button.lua
 controls\dsl.lua
+
+spellData.lua
 
 run.lua
