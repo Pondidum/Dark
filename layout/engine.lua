@@ -10,8 +10,8 @@ local engine = ns.class:extend({
 		self.options = options
 		self.children = {}
 
-		local stratType = options.type:lower()
-		local strat = strategies[stratType]
+		local stratLayout = options.layout:lower()
+		local strat = strategies[stratLayout]
 
 		if not strat then
 			error(string.format("No layout stragey called %s could be found", stratType))
