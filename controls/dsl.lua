@@ -8,7 +8,11 @@ local controlDsl = {
 
 		for i, config in ipairs(input) do
 
-			self:single(parent, config)
+			local instance = self:single(parent, config)
+
+			if parent.add then
+				parent:add(instance)
+			end
 
 		end
 

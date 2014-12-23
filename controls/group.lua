@@ -12,12 +12,6 @@ local group = control:extend({
 
 	end,
 
-	children = function(self, childrenTable)
-		for i, control in ipairs(childrenTable) do
-			self:add(control)
-		end
-	end,
-
 	add = function(self, control)
 
 		local child = control.frame
