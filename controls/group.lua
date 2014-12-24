@@ -10,6 +10,8 @@ local group = control:extend({
 		self.frame = CreateFrame("Frame", options.name, parent)
 		self.engine = ns.layoutEngine:new(self.frame, options)
 
+		self.style:frame(self.frame)
+
 	end,
 
 	add = function(self, control)
