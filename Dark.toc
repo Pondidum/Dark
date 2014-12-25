@@ -24,6 +24,7 @@ layout\common.lua
 controls\control.lua
 controls\frame.lua
 controls\group.lua
+controls\scroll.lua
 controls\label.lua
 controls\dropdown.lua
 controls\textbox.lua
