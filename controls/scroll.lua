@@ -8,8 +8,10 @@ local scroll = control:extend({
 
 		self.frame = CreateFrame("Frame", options.name, parent, "UIPanelScrollFrameTemplate")
 
-		self.style:frame(self.frame)
+	end,
 
+	applyStyle = function(self, styler)
+		styler:frame(self.frame)
 	end,
 
 	add = function(self, control)
@@ -23,4 +25,4 @@ local scroll = control:extend({
 	end,
 })
 
-ns.controls.frame = frame
+ns.controls.scroll = scroll

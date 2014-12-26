@@ -8,7 +8,6 @@ local button = control:extend({
 	create = function(self, parent, options)
 
 		local button = CreateFrame("Button", options.name, parent, "ActionButtonTemplate")
-		self.style:actionButton(button)
 
 		button.text = button:CreateFontString()
 		button.text:SetFont(fonts.normal, 12)
@@ -17,6 +16,10 @@ local button = control:extend({
 
 		self.frame = button
 
+	end,
+
+	applyStyle = function(self, styler)
+		styler:actionButton(self.frame)
 	end,
 
 	icon = function(self, value)

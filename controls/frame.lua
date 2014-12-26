@@ -8,8 +8,10 @@ local frame = control:extend({
 
 		self.frame = CreateFrame("Frame", options.name, parent)
 
-		self.style:frame(self.frame)
+	end,
 
+	applyStyle = function(self, styler)
+		styler:frame(self.frame)
 	end,
 
 	add = function(self, control)

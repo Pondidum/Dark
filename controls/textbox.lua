@@ -11,9 +11,12 @@ local textbox = control:extend({
 		edit:SetAutoFocus(false)
 		edit:SetFont(fonts.normal, 12)
 
-		self.style:textbox(edit)
 		self.frame = edit
 
+	end,
+
+	applyStyle = function(self, styler)
+		styler:textbox(self.frame)
 	end,
 
 	text = function(self, value)

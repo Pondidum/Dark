@@ -15,8 +15,10 @@ local label = control:extend({
 		self.label:SetAllPoints(self.frame)
 		self.label:SetFont(fonts.normal, 12)
 
-		self.style:frame(self.frame)
+	end,
 
+	applyStyle = function(self, styler)
+		styler:frame(self.frame)
 	end,
 
 	text = function(self, value)

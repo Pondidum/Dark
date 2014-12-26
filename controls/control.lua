@@ -2,8 +2,6 @@ local addon, ns = ...
 
 local control = ns.class:extend({
 
-	style = ns.style,
-
 	defaultWidth = 75,
 	defaultHeight = 18,
 
@@ -14,11 +12,15 @@ local control = ns.class:extend({
 		self:create(parent, options)
 		self:applyDefaults()
 		self:applyOptions(options)
-
+		self:applyStyle(ns.style)
 	end,
 
 	create = function(self, parent, options)
 		--self.frame = CreateFrame("Frame", options.name, options.parent or UIParent)
+	end,
+
+	applyStyle = function(self, styler)
+
 	end,
 
 	applyDefaults = function(self)

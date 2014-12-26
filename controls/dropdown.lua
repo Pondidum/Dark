@@ -9,7 +9,7 @@ local dropdown = control:extend({
 
 		self.frame = CreateFrame("frame", options.name, parent, "UIDropDownMenuTemplate")
 
-		self.style:button(_G[options.name .. "Button"])
+		self.styler:button(_G[options.name .. "Button"])
 	end,
 
 	items = function(self, items)
