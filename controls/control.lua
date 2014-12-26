@@ -4,6 +4,7 @@ local control = ns.class:extend({
 
 	defaultWidth = 75,
 	defaultHeight = 18,
+	style = true,
 
 	ctor = function(self, parent, options)
 
@@ -12,7 +13,10 @@ local control = ns.class:extend({
 		self:create(parent, options)
 		self:applyDefaults()
 		self:applyOptions(options)
-		self:applyStyle(ns.style)
+
+		if self.style then
+			self:applyStyle(ns.style)
+		end
 	end,
 
 	create = function(self, parent, options)
