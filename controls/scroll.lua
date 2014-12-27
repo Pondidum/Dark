@@ -6,7 +6,7 @@ local scroll = control:extend({
 
 	create = function(self, parent, options)
 
-		self.frame = CreateFrame("Frame", options.name, parent, "UIPanelScrollFrameTemplate")
+		self.frame = CreateFrame("ScrollFrame", options.name, parent, "UIPanelScrollFrameTemplate")
 
 	end,
 
