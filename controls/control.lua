@@ -12,11 +12,13 @@ local control = ns.class:extend({
 
 		self:create(parent, options)
 		self:applyDefaults()
-		self:applyOptions(options)
 
 		if self.style then
 			self:applyStyle(ns.style)
 		end
+
+		self:applyOptions(options)
+
 	end,
 
 	create = function(self, parent, options)
