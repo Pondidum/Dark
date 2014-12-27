@@ -76,6 +76,10 @@ local control = ns.class:extend({
 		self.frame:SetParent(value)
 	end,
 
+	customise = function(self, action)
+		action(self.frame)
+	end,
+
 })
 
 ns.controls.control = control
