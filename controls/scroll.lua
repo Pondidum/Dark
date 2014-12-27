@@ -7,6 +7,11 @@ local scroll = control:extend({
 	create = function(self, parent, options)
 
 		self.frame = CreateFrame("ScrollFrame", options.name, parent, "UIPanelScrollFrameTemplate")
+		self.bar = self.frame.ScrollBar
+
+		self.bar:ClearAllPoints()
+		self.bar:SetPoint("TOPRIGHT", self.frame, "TOPRIGHT", 0, -16)
+		self.bar:SetPoint("BOTTOMRIGHT", self.frame, "BOTTOMRIGHT", 0, 16)
 
 	end,
 
@@ -23,7 +28,11 @@ local scroll = control:extend({
 		parent:SetScrollChild(child)
 
 		local onSizeChanged = function(parent, width, height)
-			child:SetWidth(width)
+
+			local barWidth = self.bar:GetWidth()
+
+			child:SetWidth(width - barWidth)
+
 		end
 
 		parent:SetScript("OnSizeChanged", onSizeChanged)
