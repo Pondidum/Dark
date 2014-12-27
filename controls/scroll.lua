@@ -22,6 +22,12 @@ local scroll = control:extend({
 		child:SetParent(parent)
 		parent:SetScrollChild(child)
 
+		local onSizeChanged = function(parent, width, height)
+			child:SetWidth(width)
+		end
+
+		parent:SetScript("OnSizeChanged", onSizeChanged)
+
 	end,
 })
 
