@@ -14,6 +14,12 @@ local controlDsl = {
 				parent:add(instance)
 			end
 
+			parent.controls[i] = instance
+
+			if config.key then
+				parent.controls[config.key] = instance
+			end
+
 		end
 
 		return parent

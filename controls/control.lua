@@ -19,6 +19,9 @@ local control = ns.class:extend({
 
 		self:applyOptions(options)
 
+		-- done after so applyOptions doesnt pick it up
+		self.controls = {}
+
 	end,
 
 	create = function(self, parent, options)
