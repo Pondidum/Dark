@@ -8,7 +8,6 @@ local core = Dark.core
 
 ns.media = {
 	textures = core.textures,
-	colors = core.colors,
 	fonts = core.fonts,
 	sounds = core.sounds,
 }

@@ -11,6 +11,8 @@ config.lua
 class.lua
 mixin.lua
 
+media\colors.lua
+
 style.lua
 
 mixins\events.lua
