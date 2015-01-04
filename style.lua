@@ -114,7 +114,7 @@ local style = {
 		target.Right:Hide()
 		target.Middle:Hide()
 
-		target.bg:SetBackdropBorderColor(1, 1, 1, 0.8)
+		target.bg:SetBackdropBorderColor(unpack(colors.border))
 
 	end,
 
