@@ -4,8 +4,8 @@ local colors = {}
 
 colors.border = {1, 1, 1, 0.8}
 
-colors.shadow =  {0, 0, 0, 0.8},
-colors.background = {0, 0, 0, 0.4},
+colors.shadow =  {0, 0, 0, 0.8}
+colors.background = {0, 0, 0, 0.4}
 
 colors.reaction = {
 	[1] = { 222/255, 95/255,  95/255 }, -- Hated
