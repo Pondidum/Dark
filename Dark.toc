@@ -12,6 +12,7 @@ class.lua
 mixin.lua
 
 media\colors.lua
+media\textures.lua
 
 style.lua
 

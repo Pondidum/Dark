@@ -7,7 +7,6 @@ ns.controls = {}
 local core = Dark.core
 
 ns.media = {
-	textures = core.textures,
 	fonts = core.fonts,
 	sounds = core.sounds,
 }
