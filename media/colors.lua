@@ -2,9 +2,11 @@ local addon, ns = ...
 
 local colors = {}
 
-colors.border = {1, 1, 1, 0.8}
+colors.shadowAlpha = 0.8
 
-colors.shadow =  {0, 0, 0, 0.8}
+colors.border = {1, 1, 1, colors.shadowAlpha}
+
+colors.shadow =  {0, 0, 0, colors.shadowAlpha}
 colors.background = {0, 0, 0, 0.4}
 
 colors.reaction = {
