@@ -3,7 +3,6 @@
 ## Author: Darkend / DarkStorm / Zenedar / EU
 ## Version: 0.0.1
 ## Notes: DarkUI Core Libary
-## RequiredDeps: Dark.Core
 
 initialise.lua
 config.lua
