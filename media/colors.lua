@@ -3,11 +3,12 @@ local addon, ns = ...
 local colors = {}
 
 colors.shadowAlpha = 0.8
+colors.backgroundAlpha = 0.4
 
 colors.border = {1, 1, 1, colors.shadowAlpha}
 
 colors.shadow =  {0, 0, 0, colors.shadowAlpha}
-colors.background = {0, 0, 0, 0.4}
+colors.background = {0, 0, 0, colors.backgroundAlpha}
 
 colors.reaction = {
 	[1] = { 222/255, 95/255,  95/255 }, -- Hated
