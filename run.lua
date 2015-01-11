@@ -10,6 +10,7 @@ local dark = {
 	controls = ns.controls,
 	style = ns.style,
 	layoutEngine = ns.layoutEngine,
+	media = ns.media,
 
 	spellData = ns.spellData:new()
 }
