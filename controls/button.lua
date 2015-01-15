@@ -8,13 +8,13 @@ local button = control:extend({
 	create = function(self, parent, options)
 
 		local button = CreateFrame("Button", options.name, parent, "ActionButtonTemplate")
-
-		button.text = button:CreateFontString()
-		button.text:SetFont(fonts.normal, 12)
-		button.text:SetAllPoints(button)
-		button.text:SetJustifyH("CENTER")
+		local text = button:CreateFontString()
+		text:SetFont(fonts.normal, 12)
+		text:SetAllPoints(button)
+		text:SetJustifyH("CENTER")
 
 		self.frame = button
+		self.label = text
 
 	end,
 
@@ -24,7 +24,11 @@ local button = control:extend({
 
 	icon = function(self, value)
 		self.frame.icon:SetTexture(value)
-	end
+	end,
+
+	text = function(self, value)
+		self.label:SetText(value)
+	end,
 })
 
 ns.controls.button = button
