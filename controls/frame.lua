@@ -16,7 +16,7 @@ local frame = control:extend({
 
 	add = function(self, control)
 
-		local child = control.frame
+		local child = control.frame and control.frame or control
 		child:SetParent(self.frame)
 
 	end,
