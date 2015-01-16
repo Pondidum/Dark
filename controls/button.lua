@@ -29,6 +29,12 @@ local button = control:extend({
 	text = function(self, value)
 		self.label:SetText(value)
 	end,
+
+	click = function(self, handler)
+		self.frame:SetScript("OnClick", function(f, mouseButton, down)
+			handler(self, mouseButton, down)
+		end)
+	end,
 })
 
 ns.controls.button = button
