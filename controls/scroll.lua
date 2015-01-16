@@ -22,7 +22,7 @@ local scroll = control:extend({
 	add = function(self, control)
 
 		local parent = self.frame
-		local child = control.frame
+		local child = control.frame and control.frame or control
 
 		child:SetParent(parent)
 		parent:SetScrollChild(child)
