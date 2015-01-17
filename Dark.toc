@@ -33,6 +33,7 @@ controls\label.lua
 controls\dropdown.lua
 controls\textbox.lua
 controls\button.lua
+controls\tabs.lua
 controls\dsl.lua
 
 spellData.lua
