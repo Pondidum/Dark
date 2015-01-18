@@ -24,7 +24,7 @@ local style = {
 
 		target:SetBackdrop( {
 			edgeFile = textures.shadow,
-			edgeSize = offset,
+			edgeSize = BORDER_OFFSET,
 			insets = {
 				left = BORDER_INSET,
 				right = BORDER_INSET,
