@@ -18,6 +18,7 @@ media\sounds.lua
 style.lua
 
 mixins\events.lua
+mixins\updates.lua
 mixins\cache.lua
 mixins\configReader.lua
 mixins\configWriter.lua
