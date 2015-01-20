@@ -9,11 +9,11 @@ local label = control:extend({
 
 	create = function(self, parent, options)
 
-		self.frame = CreateFrame("Frame", options.name, parent)
-		self.label = self.frame:CreateFontString()
+		self.frame = parent:CreateFontString(options.name, "OVERLAY")
 
-		self.label:SetAllPoints(self.frame)
-		self.label:SetFont(fonts.normal, 12)
+		self.frame:SetFont(fonts.normal, 12)
+		self.frame:SetShadowColor(0, 0, 0)
+		self.frame:SetShadowOffset(1.25, -1.25)
 
 	end,
 
@@ -22,11 +22,11 @@ local label = control:extend({
 	end,
 
 	text = function(self, value)
-		self.label:SetText(value)
+		self.frame:SetText(value)
 	end,
 
 	align = function(self, value)
-		self.label:SetJustifyH(value)
+		self.frame:SetJustifyH(value)
 	end,
 
 })
