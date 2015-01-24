@@ -37,6 +37,7 @@ controls\button.lua
 controls\tabs.lua
 controls\dsl.lua
 
+slash.lua
 spellData.lua
 
 run.lua
