@@ -78,24 +78,3 @@ local slash = class:extend({
 })
 
 ns.slash = slash
-
---[[
-local s = slash.new()
-
-
-local testGraph = {
-	enable = function() print("enable") end,
-	channel = function(value) print("channel", value) end,
-	suffix = function(value) print("suffix", value) end,
-}
-
-s.register("omg", testGraph)
-
-s.process('omg enable')
-s.process('omg channel')
-s.process('omg channel test')
-s.process('omg channel party test')
-s.process('omg suffix one')
-s.process('omg suffix winkle next')
-s.process('omg suffix "winkle next"')
-]]
