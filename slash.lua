@@ -3,11 +3,15 @@ local class = ns.class
 
 local slash = class:extend({
 
-	ctor = function(self)
+	ctor = function(self, prefix)
 		self.handlers = {}
 
-		SLASH_DARK1 = "/dark"
-		SlashCmdList["DARK"] = function (args)
+		local up = string.upper(prefix)
+		local down = string.lower(prefix)
+
+		_G["SLASH_"..up.."1"] = "/"..down
+
+		SlashCmdList[up] = function (args)
 			self:process(args)
 		end
 
