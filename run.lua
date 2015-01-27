@@ -11,6 +11,7 @@ local dark = {
 	style = ns.style,
 	layoutEngine = ns.layoutEngine,
 	media = ns.media,
+	slash = ns.slash,
 
 	spellData = ns.spellData:new()
 }
