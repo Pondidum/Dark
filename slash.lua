@@ -5,6 +5,7 @@ local slash = class:extend({
 
 	ctor = function(self, prefix)
 		self.graph = {}
+		self.prefix = prefix
 
 		local up = string.upper(prefix)
 		local down = string.lower(prefix)
@@ -25,6 +26,14 @@ local slash = class:extend({
 
 		local parts = self:splitParts(args)
 		local parent = self.graph
+
+		if #parts == 0 then
+
+			local action = self.default or self.print
+
+			action(self)
+			return
+		end
 
 		for i, part in ipairs(parts) do
 
@@ -77,7 +86,16 @@ local slash = class:extend({
 
 		return parts
 
-	end
+	end,
+
+	print = function(self)
+
+		print(self.prefix .. " options:")
+
+		for name, v in pairs(self.graph) do
+			print("  ", name)
+		end
+	end,
 
 })
 
