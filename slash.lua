@@ -4,7 +4,7 @@ local class = ns.class
 local slash = class:extend({
 
 	ctor = function(self, prefix)
-		self.handlers = {}
+		self.graph = {}
 
 		local up = string.upper(prefix)
 		local down = string.lower(prefix)
@@ -17,14 +17,14 @@ local slash = class:extend({
 
 	end,
 
-	register = function(self, name, graph)
-		self.handlers[name] = graph
+	register = function(self, graph)
+		self.graph = graph
 	end,
 
-	process = function(args)
+	process = function(self, args)
 
-		local parts = splitParts(args)
-		local parent = self.handlers
+		local parts = self:splitParts(args)
+		local parent = self.graph
 
 		for i, part in ipairs(parts) do
 
@@ -46,7 +46,7 @@ local slash = class:extend({
 
 	end,
 
-	splitParts = function(args)
+	splitParts = function(self, args)
 
 		local parts = {}
 		local part = ''
