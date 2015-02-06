@@ -2,6 +2,7 @@ local addon, ns = ...
 
 local colors = ns.media.colors
 local textures = ns.media.textures
+local fonts = ns.media.fonts
 
 local BORDER_OFFSET = 3
 local BORDER_INSET = 3
@@ -103,6 +104,22 @@ local style = {
 		local border = target.Border
 		border:SetTexture(nil)
 		border:Hide()
+
+	end,
+
+	itemButton = function(self, target)
+
+		self:button(target)
+
+		local icon = target.icon
+		icon:SetTexCoord(.08, .92, .08, .92)
+		icon:SetPoint("TOPLEFT", target, 0, 0)
+		icon:SetPoint("BOTTOMRIGHT", target, 0, 0)
+
+		local count = target.Count
+		count:ClearAllPoints()
+		count:SetPoint("BOTTOMRIGHT", 0, 2)
+		count:SetFont(fonts.normal, 12, "OUTLINE")
 
 	end,
 
