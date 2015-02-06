@@ -111,6 +111,12 @@ local style = {
 			floatingBackground:SetTexture(nil)
 		end
 
+		local hotkey = target.HotKey
+		hotkey:ClearAllPoints()
+		hotkey:SetPoint("TOPRIGHT", 2, 0)
+		hotkey:SetFont(fonts.normal, 10, "OUTLINE")
+		hotkey:SetJustifyH("RIGHT")
+
 	end,
 
 	petActionButton = function(self, target)
