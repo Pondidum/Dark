@@ -105,6 +105,12 @@ local style = {
 		border:SetTexture(nil)
 		border:Hide()
 
+		local floatingBackground = _G[target:GetName().."FloatingBG"]
+
+		if floatingBackground then
+			floatingBackground:SetTexture(nil)
+		end
+
 	end,
 
 	petActionButton = function(self, target)
