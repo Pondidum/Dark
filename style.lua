@@ -107,6 +107,22 @@ local style = {
 
 	end,
 
+	petActionButton = function(self, target)
+
+		self:actionButton(target)
+
+		local name = target:GetName()
+
+		local normal =_G[name.."NormalTexture2"]
+		normal:SetTexture(nil)
+		normal:Hide()
+		normal:SetAlpha(0)
+
+		local autoCast = _G[name.."AutoCastable"]
+		autoCast:SetAlpha(0)
+
+	end,
+
 	itemButton = function(self, target)
 
 		self:button(target)
@@ -122,6 +138,7 @@ local style = {
 		count:SetFont(fonts.normal, 12, "OUTLINE")
 
 	end,
+
 
 	textbox = function(self, target)
 
