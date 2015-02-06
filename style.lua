@@ -124,6 +124,11 @@ local style = {
 		buttonName:ClearAllPoints()
 		buttonName:SetPoint("TOPLEFT", target, 0, 0)
 
+		local count = target.Count
+		count:ClearAllPoints()
+		count:SetPoint("BOTTOMRIGHT", 0, 2)
+		count:SetFont(fonts.normal, 12, "OUTLINE")
+
 	end,
 
 	petActionButton = function(self, target)
