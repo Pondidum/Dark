@@ -117,6 +117,13 @@ local style = {
 		hotkey:SetFont(fonts.normal, 10, "OUTLINE")
 		hotkey:SetJustifyH("RIGHT")
 
+		local buttonName = target.Name
+		buttonName:SetTextColor(hotkey:GetTextColor())
+		buttonName:SetFont(fonts.normal, 10, "OUTLINE")
+		buttonName:SetJustifyH("LEFT")
+		buttonName:ClearAllPoints()
+		buttonName:SetPoint("TOPLEFT", target, 0, 0)
+
 	end,
 
 	petActionButton = function(self, target)
