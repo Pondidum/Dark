@@ -25,6 +25,7 @@ mixins\configWriter.lua
 
 layout\engine.lua
 layout\common.lua
+layout\series.lua
 
 controls\control.lua
 controls\frame.lua
