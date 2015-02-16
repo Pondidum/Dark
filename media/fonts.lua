@@ -8,15 +8,15 @@ local fonts = {
 
 	create = function(self, parent, fontName, fontSize)
 
-	local font = fontName or self.normal
-	local size = fontSize or 12
+		local font = fontName or self.normal
+		local size = fontSize or 12
 
-	local fs = parent:CreateFontString(nil, "OVERLAY")
+		local fs = parent:CreateFontString(nil, "OVERLAY")
 
-	fs:SetFont(font, size)
-	fs:SetJustifyH("LEFT")
-	fs:SetShadowColor(0, 0, 0)
-	fs:SetShadowOffset(1.25, -1.25)
+		fs:SetFont(font, size)
+		fs:SetJustifyH("LEFT")
+		fs:SetShadowColor(0, 0, 0)
+		fs:SetShadowOffset(1.25, -1.25)
 
 	return fs
 
