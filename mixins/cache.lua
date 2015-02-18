@@ -51,6 +51,16 @@ local cache = ns.mixin:extend({
 		end
 
 	end,
+
+	new = function(self, onCreate)
+
+		local instance = ns.class:new()
+		instance:include(self)
+		instance.onCreate = onCreate
+
+		return instance
+	end,
+
 })
 
 ns.mixins.cache = cache
