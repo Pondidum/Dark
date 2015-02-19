@@ -1,6 +1,13 @@
 local addon, ns = ...
 
-local cache = ns.mixin:extend({
+local cache = ns.class:extend({
+
+	ctor = function(self)
+		self:postMix(self)
+	end,
+
+	preMix = function(self, target)
+	end,
 
 	postMix = function(self, target)
 		target._count = 0
@@ -44,23 +51,13 @@ local cache = ns.mixin:extend({
 		self._items[item] = false
 	end,
 
-	recycleAll = function(self, item)
+	recycleAll = function(self)
 
 		for entry, active in pairs(self._items) do
-			self:recycle(item)
+			self:recycle(entry)
 		end
 
 	end,
-
-	new = function(self, onCreate)
-
-		local instance = ns.class:new()
-		instance:include(self)
-		instance.onCreate = onCreate
-
-		return instance
-	end,
-
 })
 
 ns.mixins.cache = cache
