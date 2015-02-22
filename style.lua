@@ -23,7 +23,17 @@ local style = {
 
 	border = function(self, target)
 
-		target:SetBackdrop( {
+		local shadow = CreateFrame("Frame", nil, target)
+		target.shadow = shadow
+
+		shadow:SetFrameLevel(1)
+		shadow:SetFrameStrata(target:GetFrameStrata())
+		shadow:SetPoint("TOPLEFT", -BORDER_OFFSET, BORDER_OFFSET)
+		shadow:SetPoint("BOTTOMLEFT", -BORDER_OFFSET, -BORDER_OFFSET)
+		shadow:SetPoint("TOPRIGHT", BORDER_OFFSET, BORDER_OFFSET)
+		shadow:SetPoint("BOTTOMRIGHT", BORDER_OFFSET, -BORDER_OFFSET)
+
+		shadow:SetBackdrop( {
 			edgeFile = textures.shadow,
 			edgeSize = BORDER_OFFSET,
 			insets = {
@@ -34,7 +44,7 @@ local style = {
 			},
 		})
 
-		target:SetBackdropBorderColor(unpack(colors.shadow))
+		shadow:SetBackdropBorderColor(unpack(colors.shadow))
 
 	end,
 
