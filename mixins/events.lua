@@ -1,43 +1,46 @@
 local addon, ns = ...
 
-local sharedStore = {}
-local sharedFrame = CreateFrame("Frame")
-
-sharedFrame:SetScript("OnEvent", function(frame, name, ...)
-
-	local targets = sharedStore[name] or {}
-
-	for target, active in pairs(targets) do
-
-		if active and target[name] then
-			target[name](target, ...)
-		end
-
-	end
-
-end)
-
 local eventMixer = ns.mixin:extend({
 
 	register = function(self, name)
-		sharedStore[name] = sharedStore[name] or {}
-		sharedStore[name][self] = true
+		self.__events[name] = self.__events[name] or {}
+		self.__events[name][self] = true
 
-		sharedFrame:RegisterEvent(name)
+		self.__frame:RegisterEvent(name)
 	end,
 
 	unregister = function(self, name)
 
-		if sharedStore[name] then
-			sharedStore[name][self] = nil
+		if self.__events[name] then
+			self.__events[name][self] = nil
 		end
 
 	end,
 
 	isRegistered = function(self, name)
 
-		return sharedStore[name] and sharedStore[name][self]
+		return self.__events[name] and self.__events[name][self]
 
+	end,
+
+	preMix = function(self, target)
+
+		target.__events = {}
+		target.__frame = CreateFrame("Frame")
+
+		target.__frame:SetScript("OnEvent", function(frame, name, ...)
+
+			local targets = target.__events[name] or {}
+
+			for target, active in pairs(targets) do
+
+				if active and target[name] then
+					target[name](target, ...)
+				end
+
+			end
+
+		end)
 	end,
 
 	postMix = function(self, target)
