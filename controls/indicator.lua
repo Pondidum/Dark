@@ -2,7 +2,7 @@ local addon, ns = ...
 local colors = ns.media.colors
 local controls = ns.controls
 
-local indicatorColor = { 41/255, 79/255, 155/255, 1 }
+local highlightColor = { 41/255, 79/255, 155/255, 1 }
 
 controls.indicator = function(self, config)
 
@@ -22,7 +22,7 @@ controls.indicator = function(self, config)
 	frame.setState = function(self, state)
 
 		if state then
-			frame:SetBackdropColor(config.highlight or indicatorColor)
+			frame:SetBackdropColor(config.highlight or highlightColor)
 		else
 			frame:SetBackdropColor(unpack(colors.background))
 		end
