@@ -7,7 +7,6 @@ local dark = {
 	mixin = ns.mixin,
 	mixins = ns.mixins,
 	events = ns.mixins.events,
-	controls = ns.controls,
 	style = ns.style,
 	layoutEngine = ns.layoutEngine,
 	media = ns.media,
