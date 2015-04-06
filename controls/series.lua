@@ -3,6 +3,8 @@ local controls = ns.controls
 
 controls.series = function(self, config, ...)
 
+	config = config or {}
+
 	local children = { ... }
 
 	local point = config.point or config.defaults.point or "BOTTOMLEFT"

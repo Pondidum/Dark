@@ -6,6 +6,8 @@ local highlightColor = { 41/255, 79/255, 155/255, 1 }
 
 controls.indicator = function(self, config)
 
+	config = config or {}
+
 	local frame = self:frame(config)
 	local glow = self:frame({ parent = frame, template = "ActionBarButtonSpellActivationAlert"})
 

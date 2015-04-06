@@ -3,6 +3,8 @@ local controls = ns.controls
 
 controls.timerbar = function(self, config)
 
+	config = config or {}
+
 	local frame = self:statusbar(config)
 
 	local cdStart = 0

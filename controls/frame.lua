@@ -3,6 +3,8 @@ local controls = ns.controls
 
 controls.frame = function(self, config)
 
+	config = config or {}
+
 	local type = config.type or self.defaults.type or "Frame"
 	local name = config.name
 	local parent = config.parent or self.defaults.parent
