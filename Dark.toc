@@ -32,6 +32,7 @@ controls\frame.lua
 controls\statusbar.lua
 controls\timerbar.lua
 controls\indicator.lua
+controls\series.lua
 
 slash.lua
 spellData.lua
