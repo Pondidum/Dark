@@ -1,8 +1,6 @@
 require("framemodel")
 
--- local horizontal = loadfile("horizontal.lua")
--- local vertical = loadfile("vertical.lua")
-local common = loadfile("common.lua")
+local common = loadfile("..\\layout\\common.lua")
 
 local engine = {}
 local ns = {
@@ -13,9 +11,7 @@ local ns = {
 	}
 }
 
---horizontal(nil, ns)
---vertical(nil, ns)
-common(nil, ns)
+common("TestHarness", ns)
 
 local tests = {
 
