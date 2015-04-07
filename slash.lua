@@ -3,36 +3,37 @@ local class = ns.class
 
 local slash = class:extend({
 
-	ctor = function(self, prefix)
-		self.graph = {}
+	ctor = function(self, prefix, handlers)
 		self.prefix = prefix
+		self.handlers = handlers or {}
 
 		local up = string.upper(prefix)
 		local down = string.lower(prefix)
 
 		_G["SLASH_"..up.."1"] = "/"..down
 
-		SlashCmdList[up] = function (args)
+		SlashCmdList[up] = function(args)
 			self:process(args)
 		end
 
 	end,
 
-	register = function(self, graph)
-		self.graph = graph
+	add = function(self, argument, subhandlers)
+		self.handlers[argument] = subhandlers
 	end,
 
 	process = function(self, args)
 
 		local parts = self:splitParts(args)
-		local parent = self.graph
+		local parent = self.handlers
 
 		if #parts == 0 then
 
-			local action = self.default or self.print
+			local action = parent._default or self.print
 
 			action(self)
 			return
+
 		end
 
 		for i, part in ipairs(parts) do
@@ -46,11 +47,22 @@ local slash = class:extend({
 			elseif t == "table" then
 				parent = current
 			elseif t == "function" then
-				current(select(i+1, unpack(parts)))
+				current(self, select(i+1, unpack(parts)))
+				return
 			else
 				return
 			end
 
+		end
+
+	end,
+
+	print = function(self)
+
+		print(self.prefix .. ":")
+
+		for name, handler in pairs(self.handlers) do
+			print("", name)
 		end
 
 	end,
@@ -88,14 +100,6 @@ local slash = class:extend({
 
 	end,
 
-	print = function(self)
-
-		print(self.prefix .. " options:")
-
-		for name, v in pairs(self.graph) do
-			print("  ", name)
-		end
-	end,
 
 })
 
