@@ -42,8 +42,11 @@ local slash = class:extend({
 			local t = type(current)
 
 			if current == nil then
-				print(string.format("Unknown argument '%s'", part))
+				local action = parent._default or self.print
+
+				action(self, unpack(parts))
 				return
+
 			elseif t == "table" then
 				parent = current
 			elseif t == "function" then
