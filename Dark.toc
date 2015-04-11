@@ -33,6 +33,7 @@ controls\statusbar.lua
 controls\timerbar.lua
 controls\indicator.lua
 controls\series.lua
+controsl\textbox.lua
 
 slash.lua
 spellData.lua
