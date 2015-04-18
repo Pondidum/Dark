@@ -9,10 +9,16 @@ controls.textbox = function(self, config)
 	config.template = "InputBoxTemplate"
 
 	local edit = self:frame(config)
+
 	edit:SetAutoFocus(false)
 	edit:SetFont(fonts.normal, 12)
+	edit:SetSize(75, 18)
 
 	style:textbox(edit)
+
+	if config.text then
+		edit:SetText(config.text)
+	end
 
 	return edit
 
