@@ -36,6 +36,7 @@ controls\series.lua
 controls\textbox.lua
 controls\scrollFrame.lua
 controls\font.lua
+controls\button.lua
 
 slash.lua
 spellData.lua
