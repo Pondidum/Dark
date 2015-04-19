@@ -18,14 +18,15 @@ controls.indicator = function(self, config)
 	glow:SetPoint("TOPLEFT", frame, "TOPLEFT", -xoffset , yoffset)
 	glow:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", xoffset, -yoffset)
 
-	style:frame(frame)
+	style:background(frame)
+	style:border(frame)
 
 	glow.animOut:SetScript("OnFinished", function(self) glow:Hide() end)
 
 	frame.setState = function(self, state)
 
 		if state then
-			frame:SetBackdropColor(config.highlight or highlightColor)
+			frame:SetBackdropColor(unpack(config.color or highlightColor))
 		else
 			frame:SetBackdropColor(unpack(colors.background))
 		end
