@@ -35,6 +35,7 @@ controls\indicator.lua
 controls\series.lua
 controls\textbox.lua
 controls\scrollFrame.lua
+controls\font.lua
 
 slash.lua
 spellData.lua
