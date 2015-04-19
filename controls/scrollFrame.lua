@@ -29,6 +29,6 @@ controls.scrollFrame = function(self, config)
 
         frame:SetScript("OnSizeChanged", onSizeChanged)
 
-    end,
+    end
 
 end
