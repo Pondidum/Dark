@@ -7,9 +7,9 @@ controls.series = function(self, config, ...)
 
 	local children = { ... }
 
-	local point = config.point or config.defaults.point or "BOTTOMLEFT"
-	local relPoint = config.relative or config.defaults.relative or "BOTTOMRIGHT"
-	local spacing = config.spacing or config.defaults.spacing or 0
+	local point = config.point or self.defaults.point or "BOTTOMLEFT"
+	local relPoint = config.relative or self.defaults.relative or "BOTTOMRIGHT"
+	local spacing = config.spacing or self.defaults.spacing or 0
 
 	for i = 2, #children do
 
