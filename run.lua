@@ -11,6 +11,7 @@ local dark = {
 	layoutEngine = ns.layoutEngine,
 	media = ns.media,
 	slash = ns.slash:new("dark"),
+	controls = ns.controls,
 
 	spellData = ns.spellData:new()
 }
