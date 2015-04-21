@@ -31,4 +31,6 @@ controls.scrollFrame = function(self, config)
 
     end
 
+    return frame
+
 end
