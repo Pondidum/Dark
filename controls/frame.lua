@@ -12,7 +12,10 @@ controls.frame = function(self, config)
 
 	local frame = CreateFrame(type, name, parent, template)
 
-	frame:SetSize(config.width or self.defaults.width, config.height or self.defaults.height)
+	local w = config.width or self.defaults.width or 0
+	local h = config.height or self.defaults.height or 0
+
+	frame:SetSize(w, h)
 
 	return frame
 
