@@ -28,6 +28,7 @@ layout\common.lua
 layout\series.lua
 
 controls\controls.lua
+controls\spacer.lua
 controls\frame.lua
 controls\statusbar.lua
 controls\timerbar.lua
