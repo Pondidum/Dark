@@ -2,9 +2,12 @@ local addon, ns = ...
 
 local controls = {
 
-	defaults = {},
+	defaults = {
+		parent = UIParent
+	},
 
 	createDefaults = function(self, defaults)
+
 		local this = {
 			defaults = defaults
 		}
