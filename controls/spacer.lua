@@ -3,24 +3,6 @@ local controls = ns.controls
 
 controls.spacer = {
 
-	insetTop = function(self, frame, spacing, parent)
-
-		parent = parent or frame:GetParent()
-
-		frame:SetPoint("TOPLEFT", parent, "TOPLEFT", spacing, -spacing)
-		frame:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -spacing, -spacing)
-
-	end,
-
-	insetBottom = function(self, frame, spacing, parent)
-
-		parent = parent or frame:GetParent()
-
-		frame:SetPoint("BOTTOMLEFT", parent, "BOTTOMLEFT", spacing, spacing)
-		frame:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -spacing, spacing)
-
-	end,
-
 	between = function(self, frame, spacing, points)
 
 		for point, targetFrame in pairs(points) do
