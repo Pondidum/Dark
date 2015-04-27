@@ -10,6 +10,7 @@ controls.button = function(self, config)
 	local button = self:frame(config)
 	local font = self:font({ parent = button, text = config.text })
 	font:SetAllPoints(button)
+	font:SetJustifyH("CENTER")
 
 	if config.respondsTo then
 		button:RegisterForClicks(config.respondsTo)
