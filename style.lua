@@ -7,6 +7,8 @@ local fonts = ns.media.fonts
 local BORDER_OFFSET = 3
 local BORDER_INSET = 3
 
+local EMPTY = {}
+
 local style = {
 
 	background = function(self, target)
@@ -48,7 +50,9 @@ local style = {
 
 	end,
 
-	frame = function(self, target)
+	frame = function(self, target, overrides)
+
+		overrides = overrides or EMPTY
 
 		if target.bg then return end
 
@@ -75,15 +79,15 @@ local style = {
 			},
 		})
 
-		bg:SetBackdropColor(unpack(colors.background))
-		bg:SetBackdropBorderColor(unpack(colors.shadow))
+		bg:SetBackdropColor(unpack(overrides.backgroundColor or colors.background))
+		bg:SetBackdropBorderColor(unpack(overrides.borderColor or colors.shadow))
 
 		target.bg = bg
 	end,
 
-	button = function(self, target)
+	button = function(self, target, overrides)
 
-		self:frame(target)
+		self:frame(target, overrides)
 
 		local normalTexture = target:GetNormalTexture()
 		normalTexture:ClearAllPoints()
@@ -99,9 +103,9 @@ local style = {
 
 	end,
 
-	actionButton = function(self, target)
+	actionButton = function(self, target, overrides)
 
-		self:button(target)
+		self:button(target, overrides)
 
 		local icon = target.icon
 		icon:SetTexCoord(.08, .92, .08, .92)
@@ -141,9 +145,9 @@ local style = {
 
 	end,
 
-	petActionButton = function(self, target)
+	petActionButton = function(self, target, overrides)
 
-		self:actionButton(target)
+		self:actionButton(target, overrides)
 
 		local name = target:GetName()
 
@@ -157,9 +161,9 @@ local style = {
 
 	end,
 
-	itemButton = function(self, target)
+	itemButton = function(self, target, overrides)
 
-		self:button(target)
+		self:button(target, overrides)
 
 		local icon = target.icon
 		icon:SetTexCoord(.08, .92, .08, .92)
@@ -174,9 +178,9 @@ local style = {
 	end,
 
 
-	textbox = function(self, target)
+	textbox = function(self, target, overrides)
 
-		self:frame(target)
+		self:frame(target, overrides)
 
 		target.Left:Hide()
 		target.Right:Hide()
