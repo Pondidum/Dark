@@ -38,6 +38,7 @@ controls\textbox.lua
 controls\scrollFrame.lua
 controls\font.lua
 controls\button.lua
+controls\checkbox.lua
 
 slash.lua
 spellData.lua
