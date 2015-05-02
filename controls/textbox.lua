@@ -1,5 +1,6 @@
 local addon, ns = ...
 local controls = ns.controls
+local fonts = ns.media.fonts
 local style = ns.style
 
 controls.textbox = function(self, config)
