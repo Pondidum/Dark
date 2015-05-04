@@ -4,7 +4,7 @@ local controls = ns.controls
 controls.button = function(self, config)
 
 	config = config or {}
-	config.type = config.type or "Button"
+	config.type = "CheckButton"
 	config.template = "ActionButtonTemplate"
 
 	local button = self:frame(config)

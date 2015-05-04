@@ -103,9 +103,18 @@ local style = {
 
 	end,
 
-	actionButton = function(self, target, overrides)
+	checkButton = function(self, target, overrides)
 
 		self:button(target, overrides)
+
+		local checked = target:GetCheckedTexture()
+		checked:SetTexture(0.9, 0.8, 0.1, 0.5)
+
+	end,
+
+	actionButton = function(self, target, overrides)
+
+		self:checkButton(target, overrides)
 
 		local icon = target.icon
 		icon:SetTexCoord(.08, .92, .08, .92)
