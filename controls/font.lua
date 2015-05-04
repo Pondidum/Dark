@@ -11,6 +11,14 @@ controls.font = function(self, config)
 
 	local font = fonts:create(parent, fontName, fontSize, fontStyle)
 
+	if config.width then
+		font:SetWidth(config.width)
+	end
+
+	if config.align then
+		font:SetJustifyH(config.align)
+	end
+
 	if config.text then
 		font:SetText(config.text)
 	end
