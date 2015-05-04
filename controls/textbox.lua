@@ -13,7 +13,7 @@ controls.textbox = function(self, config)
 
 	edit:SetAutoFocus(false)
 	edit:SetFont(fonts.normal, 12)
-	edit:SetSize(75, 18)
+	edit:SetSize(config.width or self.defaults.width or 75, 18)
 
 	style:textbox(edit)
 
