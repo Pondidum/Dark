@@ -129,8 +129,7 @@ local engine = function(settings, actions, container, children)
 			currentExpand = 0
 		end
 
-		child:ClearAllPoints()
-		child:SetPoint(settings.origin, container, settings.origin, actions.getX(x, direction), actions.getY(y, direction) )
+		settings.setPoint(child, settings.origin, container, settings.origin, actions.getX(x, direction), actions.getY(y, direction))
 
 		x = actions.getXnext(settings, x, child)
 		y = actions.getYnext(settings, y, child)

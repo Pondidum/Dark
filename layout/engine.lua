@@ -2,12 +2,26 @@ local addon, ns = ...
 
 local strategies = {}
 
+
+local defaultOptions = {
+
+	autosize = "",
+	wrap = false,
+	origin = "TOPLEFT",
+	itemSpacing = 0,
+
+	setPoint = function(child, ...)
+		child:ClearAllPoints()
+		child:SetPoint(...)
+	end,
+}
+
 local engine = ns.class:extend({
 
 	ctor = function(self, container, options)
 
 		self.container = container
-		self.options = options
+		self.options = setmetatable(options, { __index = defaultOptions })
 		self.children = {}
 
 		local stratLayout = options.layout:lower()
