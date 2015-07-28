@@ -20,6 +20,10 @@ controls.button = function(self, config)
 		button:SetScript("OnClick", config.onClick)
 	end
 
+	if config.icon then
+		button.icon:SetTexture(config.icon)
+	end
+
 	return button
 
 end
